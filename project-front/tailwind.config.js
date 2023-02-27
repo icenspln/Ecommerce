@@ -7,6 +7,9 @@ module.exports = {
         whitish: "#FBFBFB",
         redish: "#DE1F4D",
       },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fit, minmax(250px, auto))",
+      },
     },
   },
   plugins: [],
