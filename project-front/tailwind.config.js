@@ -10,6 +10,9 @@ module.exports = {
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(250px, auto))",
       },
+      fontFamily: {
+        display: "Dancing Script",
+      },
     },
   },
   plugins: [],
