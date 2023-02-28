@@ -1,11 +1,14 @@
 import React from "react";
-import { CgMenuLeft, CgShoppingBag, CgSearch, CgClose } from "react-icons/cg";
+import { CgClose } from "react-icons/cg";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Sidebar = ({ handleClick }) => {
   return (
     <div className="flex flex-col slide-in-blurred-left w-52 h-screen z-50 bg-redish fixed top-0 left-0 p-8">
-      <CgClose className="text-white text-3xl ml-auto" onClick={handleClick} />
+      <CgClose
+        className="cursor-pointer text-white text-3xl ml-auto"
+        onClick={handleClick}
+      />
       <ul className="text-white ">
         <li>
           <a href="" className="font-bold">
