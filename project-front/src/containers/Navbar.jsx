@@ -1,13 +1,13 @@
+import { Search, Sidebar, Cart } from "./../components";
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
 
 import { CgMenuLeft, CgShoppingBag, CgSearch } from "react-icons/cg";
-import Cart from "../components/Cart";
 
 function Navbar() {
   const [sideToggle, setsideToggle] = useState(false);
   const [cartToggle, setcartToggle] = useState(false);
   const [count, setCount] = useState(1);
+  const [searchToggle, setsearchToggle] = useState(false);
 
   const handleCountClickP = () => {
     if (count <= 4) setCount(count + 1);
@@ -44,7 +44,11 @@ function Navbar() {
           className="text-redish cursor-pointer"
           onClick={handleCartClick}
         />
-        <CgSearch className="cursor-pointer text-black" />
+        <CgSearch
+          onClick={() => setsearchToggle(!searchToggle)}
+          className="cursor-pointer text-black"
+        />
+        {searchToggle && <Search />}
       </div>
     </nav>
   );
