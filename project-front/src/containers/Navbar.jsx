@@ -33,7 +33,6 @@ function Navbar() {
           handleClickP={handleCountClickP}
           handleClickM={handleCountClickM}
           handleCartClick={handleCartClick}
-          count={count}
         />
       )}
       <h1 className="flex-1 text-center text-4xl font-semibold text-focus-in">

@@ -1,15 +1,15 @@
 import QuickView from "./QuickView";
 
-export default function Product({ img, desc, price, link }) {
+export default function Product({ product_id , img, desc, price }) {
   return (
     <article className="text-center max-w-[250px] mx-auto flex-shrink-0 my-4 ">
       <div>
-        <a href={link}>
+        <a href={product_id}>
           <img src={img} alt="product 1" className="m-auto" />
         </a>
       </div>
       <h3>{desc}</h3>
-      <QuickView link={link} />
+      <QuickView link={product_id} />
       <p>
         <b>{price}</b>
       </p>

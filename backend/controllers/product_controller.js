@@ -53,7 +53,7 @@ exports.getProductById = async (req, res, next) => {
 
 
 exports.addProduct = async (req, res, next) => {
-    const { title, flavors, benifits, price, size, picture, type } = req.body;
+    const { title, flavors, benifits, price, size, picture, type , description } = req.body;
     const newCourse = new product({
         title: title,
         flavors: flavors,
@@ -62,6 +62,7 @@ exports.addProduct = async (req, res, next) => {
         size: size,
         picture: picture,
         type: type,
+        description:description,
     })
 
     try {

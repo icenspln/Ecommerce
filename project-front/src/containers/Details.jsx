@@ -1,6 +1,47 @@
 import product2 from "../assets/product2.png";
+import { useState } from "react";
+
 import { AiOutlineCheck } from "react-icons/ai";
-const Details = ({ count, handleRemoveQuantity, handleAddQuantity }) => {
+import React, { useEffect } from 'react'
+import { useParams } from "react-router-dom";
+import { useCartContext } from "../context/cart_context";
+
+
+
+
+const Details = ({ id }) => {
+  const { addToCart } = useCartContext();
+
+  const params = useParams().id;
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    getProductDetail()
+  }, []);
+
+  async function getProductDetail() {
+    const response = await fetch(`http://localhost:4000/products/getProductById/${params}`);
+
+
+    if (!response.ok) {
+      const message = `An error occurred: ${response.statusText}`;
+      window.alert(message);
+      return;
+    }
+    const records = await response.json();
+    setProduct(records['result']);
+  }
+
+
+  const [count, setCount] = useState(1);
+
+  const handleAddQuantity = () => {
+    if (count <= 5) setCount(count + 1);
+  };
+  const handleRemoveQuantity = () => {
+    if (count > 1) setCount(count - 1);
+  };
+
   return (
     <main>
       <div className="flex items-center flex-col md:flex-row">
@@ -8,43 +49,31 @@ const Details = ({ count, handleRemoveQuantity, handleAddQuantity }) => {
           <img src={product2} alt="" />
         </div>
         <div>
-          <h1 className="text-4xl font-bold my-3">ESSENTIAL AMIN.O. ENERGY</h1>
-          <p className="text-base font-bold my-3">from $30</p>
+          <h1 className="text-4xl font-bold my-3">{product['title']}</h1>
+          <p className="text-base font-bold my-3">from ${product['price']}</p>
           <ul className="leading-9">
-            <li>
-              <span>
-                <AiOutlineCheck className="inline mr-3" />
-              </span>
-              Anytime Energy & Muscle Recovery
-            </li>
-            <li>
-              <span>
-                <AiOutlineCheck className="inline mr-3" />
-              </span>
-              100 mg of Caffeine per Serving from Coffee Bean and/or Tea Leaf
-            </li>
-            <li>
-              <span>
-                <AiOutlineCheck className="inline mr-3" />
-              </span>
-              Anytime Energy & Muscle Recovery5 Grams of Amino Acids for Muscle
-              Recovery Support¹
-            </li>
-            <li>
-              <span>
-                <AiOutlineCheck className="inline mr-3" />
-              </span>
-              5 to 10 Calories Per Serving with Zero Sugar
-            </li>
+            {product['benifits']?.map((pro) => (
+              <li>
+                <span>
+                  <AiOutlineCheck className="inline mr-3" />
+                </span>
+                {pro}
+              </li>
+            ))}
           </ul>
           <hr className="my-6" />
           <form className="my-4" action="#" method="get">
             <label className="mr-6" htmlFor="flavor">
               Flavor
             </label>
-            <select className="px-3 py-1 bg-white text-redish " name="flavor">
-              <option value="orange">Orange</option>
-              <option value="orange">Apple</option>
+            <select className="px-3 py-1 bg-white text-redish ">
+              {product['flavors']?.map((pro) => (
+                <option value="orange">{pro}</option>
+
+              ))}
+
+              {/* <option value="orange">Orange</option>
+              <option value="orange">Apple</option> */}
             </select>
             <br className="mb-6" />
             <label htmlFor="">Quantity</label>
@@ -69,15 +98,19 @@ const Details = ({ count, handleRemoveQuantity, handleAddQuantity }) => {
               Size
             </label>
             <select className=" px-3 py-1 bg-white text-redish " name="">
+
+
               <option value="29 servings">29 servings</option>
               <option value="30 servings">30 servings</option>
               <option value="70 servings">70 servings</option>
             </select>
-            <button className="block md:inline bg-redish text-white px-3 py-2 mx-auto md:mx-6 my-6 ">
+
+
+            <button className="block md:inline bg-redish text-white px-3 py-2 mx-auto md:mx-6 my-6 " onClick={() => addToCart(params, 1, product)}>
               ADD TO CART
             </button>
           </form>
-          <a className="text-base text-gray-500" href="#">
+          <a className="text-base text-gray-500" href="/">
             Continue Shopping?
           </a>
         </div>
