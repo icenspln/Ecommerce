@@ -1,6 +1,14 @@
+import { useState } from "react";
 import product2 from "../assets/product2.png";
 import { AiOutlineCheck } from "react-icons/ai";
-const Details = ({ count, handleRemoveQuantity, handleAddQuantity }) => {
+const Details = () => {
+  const [count, setCount] = useState(1);
+  const handleAddQuantity = () => {
+    if (count <= 5) setCount(count + 1);
+  };
+  const handleRemoveQuantity = () => {
+    if (count > 1) setCount(count - 1);
+  };
   return (
     <main>
       <div className="flex items-center flex-col md:flex-row">
