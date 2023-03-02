@@ -6,7 +6,7 @@ import { useCartContext } from "../context/cart_context";
 const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
 
 
-  const { cart, clearCart, total_price, shipping_fee } = useCartContext();
+  const { cart, clearCart, total_price } = useCartContext();
 
   const { removeItem, setIncrement, setDecrease } = useCartContext();
 
@@ -55,8 +55,6 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
       {/* total */}
       <hr className="my-6" />
       <p className="text-base font-bold text-center">Total: {total_price}$</p>
-=======
-      <p className="text-base font-bold text-center">Total: 50$</p>
       <br />
       <a href="/checkout" className="text-center block ">
         <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">

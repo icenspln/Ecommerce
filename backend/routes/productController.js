@@ -2,6 +2,7 @@ const express = require("express");
 // import {getCourse,addCourse,updateCourse,getCourseByID,deleteCourseByID} from "../Controllers/courseController.js";
 const Router = express.Router();
 const productController = require("../controllers/product_controller");
+const checkOutController = require("../controllers/checkout");
 
 
 
@@ -16,6 +17,9 @@ Router.get('/getByType/:product_type', productController.getByType);
 
 Router.post('/addProduct', productController.addProduct);
 Router.post('/addToCart', productController.addToCart);
+
+
+Router.post('/addOrder', checkOutController.addOrder);
 
 // courseRouter.put('/updateCourse/:id', courseController.updateCourse);
 // courseRouter.put('/addChapter/:id', courseController.addChapter);
