@@ -41,6 +41,12 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick, count }) => {
       {/* total */}
       <hr className="my-6" />
       <p className="text-base font-bold text-center">Total: 50$</p>
+      <br />
+      <a href="#" className="text-center block ">
+        <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">
+          CHECKOUT
+        </button>
+      </a>
     </div>
   );
 };

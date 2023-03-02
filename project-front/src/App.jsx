@@ -11,7 +11,8 @@ function App() {
       <main className="container mx-auto px-4 bg-whitish">
         <Navbar />
         {/* <Products /> */}
-        <Details />
+        {/* <Details /> */}
+
         <Contact />
       </main>
     </>
