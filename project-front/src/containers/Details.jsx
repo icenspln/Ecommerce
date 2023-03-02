@@ -1,5 +1,5 @@
-import product2 from "../assets/product2.png";
 import { useState } from "react";
+import product2 from "../assets/product2.png";
 
 import { AiOutlineCheck } from "react-icons/ai";
 import React, { useEffect } from 'react'
@@ -41,7 +41,6 @@ const Details = ({ id }) => {
   const handleRemoveQuantity = () => {
     if (count > 1) setCount(count - 1);
   };
-
   return (
     <main>
       <div className="flex items-center flex-col md:flex-row">

@@ -1,21 +1,25 @@
-import { useState } from "react";
 import Contact from "./containers/Contact";
 import Products from "./containers/Products";
 import Navbar from "./containers/Navbar";
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-
+import { BrowserRouter , Route, Routes } from 'react-router-dom'
 
 import Details from "./containers/Details";
+import Checkout from "./containers/Checkout";
 
 function App() {
+  // const location = useLocation();
+
   return (
     <>
       <main className="container mx-auto px-4 bg-whitish">
-        <Navbar />
+      {/* {location.pathname !== "/checkout" && <Navbar />} */}
+      <Navbar/>
         {/* <Products /> */}
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Products />} />
+          <Route path="/" element={<Products />} />
+          <Route path="/checkout" element={        <Checkout />
+} />
 
             <Route
               exact
@@ -23,24 +27,11 @@ function App() {
               element={<Details />}
             />
 
-            {/* <Route path="/detail/:id" children={(props) => <Details id={props.match.params.id}  />} /> */}
 
-            {/* <Route path="/detail/:id"
-            element={<Details
-            id={props.match.params.id} 
-              count={count}
-              handleAddQuantity={handleAddQuantity}
-              handleRemoveQuantity={handleRemoveQuantity}
-            />} 
-            /> */}
           </Routes>
         </BrowserRouter>
-        {/* <Details
-          count={count}
-          handleAddQuantity={handleAddQuantity}
-          handleRemoveQuantity={handleRemoveQuantity}
-        />
-        <Contact /> */}
+        <Contact /> 
+
       </main>
     </>
   );
