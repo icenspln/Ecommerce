@@ -16,7 +16,7 @@ const Sidebar = ({ handleClick }) => {
           </a>
         </li>
         <li>
-          <a href="" className="font-bold">
+          <a href="/" className="font-bold">
             Products
           </a>
         </li>
