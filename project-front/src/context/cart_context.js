@@ -30,17 +30,17 @@ const CartProvider = ({ children }) => {
 
   // increment and decrement the product
 
-  const setDecrease = (id) => {
-    dispatch({ type: "SET_DECREMENT", payload: id });
+  const setDecrease = (id, flavor, size) => {
+    dispatch({ type: "SET_DECREMENT", payload: { id, flavor, size } });
   };
 
-  const setIncrement = (id) => {
-    dispatch({ type: "SET_INCREMENT", payload: id });
+  const setIncrement = (id, flavor, size) => {
+    dispatch({ type: "SET_INCREMENT", payload: { id, flavor, size } });
   };
 
   // to remove the individual item from cart
-  const removeItem = (id) => {
-    dispatch({ type: "REMOVE_ITEM", payload: id });
+  const removeItem = (id, flavor, size) => {
+    dispatch({ type: "REMOVE_ITEM", payload: { id, flavor, size } });
   };
 
   // to clear the cart

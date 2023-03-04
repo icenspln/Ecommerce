@@ -4,7 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
 
 const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
-  const { cart, clearCart, total_price } = useCartContext();
+  const { cart, total_price } = useCartContext();
 
   const { removeItem, setIncrement, setDecrease } = useCartContext();
 
@@ -36,26 +36,26 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
               <div className="flex gap-2 mt-2 items-center ">
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setIncrement(curElem.id)}
+                  onClick={() => setIncrement(curElem.id, curElem.flavor, curElem.size)}
                 >
                   +
                 </div>
                 <div className="bg-white text-redish p-2">{curElem.amount}</div>
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setDecrease(curElem.id)}
+                  onClick={() => setDecrease(curElem.id, curElem.flavor, curElem.size)}
                 >
                   -
                 </div>
                 <p className="font-bold p-3">
-                  {curElem.amount * curElem.price}$
+                  {curElem.amount.toFixed(2) * curElem.price.toFixed(2)}$
                 </p>
               </div>
             </div>
             <i>
               <CgClose
                 className="cursor-pointer"
-                onClick={() => removeItem(curElem.id)}
+                onClick={() => removeItem(curElem.id, curElem.flavor, curElem.size)}
               />
             </i>
           </article>
