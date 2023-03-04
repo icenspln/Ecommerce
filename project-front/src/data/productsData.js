@@ -10,7 +10,7 @@ const productsData = [
     id: 1,
     img: productOne,
     desc: "OPTIMUM NUTRITION GOLD STANDARD 100% WHEY PROTEIN",
-    benefits: [
+    benifits: [
       "Post-Workout Muscle Support & Recovery",
       "24 Grams of Protein per Serving to Help Build and Maintain Muscle³",
       "5.5 Grams of Naturally Occurring BCAAs per Serving to Support Endurance and Recovery",
@@ -28,7 +28,7 @@ const productsData = [
     id: 2,
     img: productTwo,
     desc: "SERIOUS MASS",
-    benefits: [
+    benifits: [
       "For Muscle Building & Weight Gain Goals",
       "1,250 Calories per Serving to Help Boost Calorie Intake ¹",
       "50 Grams of Protein per Serving to Help Build and Maintain Muscle ¹ ³",
@@ -46,7 +46,7 @@ const productsData = [
     id: 3,
     img: productThree,
     desc: "MICRONIZED CREATINE POWDER",
-    benefits: [
+    benifits: [
       "Muscle Size, Strength & Performance",
       "5 Grams of Pure Creatine Monohydrate per Serving",
       "Helps Support ATP Recycling & Explosive Movements¹ ³",
@@ -64,7 +64,7 @@ const productsData = [
     id: 4,
     img: productFour,
     desc: "OPTI-MEN",
-    benefits: [
+    benifits: [
       "Multi-Vitamin for Active Men",
       "Supports Cellular Energy & Metabolism - B-Vitamins Support the Breakdown and Transport of Nutrients¹",
       "Supports Muscle Health¹",
@@ -82,7 +82,7 @@ const productsData = [
     id: 5,
     img: productFive,
     desc: "BCAA 1000",
-    benefits: [
+    benifits: [
       "Branched Chain Amino Acid Support",
       "2:1:1 ratio of L-Leucine, L-Isoleucine and L-Valine",
       "Essential Amino Acid Support",
@@ -100,7 +100,7 @@ const productsData = [
     id: 6,
     img: productSix,
     desc: "ESSENTIAL AMIN.O. ENERGY",
-    benefits: [
+    benifits: [
       "Anytime Energy & Muscle Recovery",
       "100 mg of Caffeine per Serving from Coffee Bean and/or Tea Leaf",
       "5 Grams of Amino Acids for Muscle Recovery Support¹",
@@ -118,7 +118,7 @@ const productsData = [
     id: 7,
     img: productSeven,
     desc: "GOLD STANDARD 100% CASEIN",
-    benefits: [
+    benifits: [
       "Slow-Digesting Protein for Overnight Muscle Recovery",
       "24 Grams of Protein per serving to Help Build and Maintain Muscle³",
       "Nearly 5 Grams of Naturally Occurring BCAAs per Serving to Support Endurance and Recovery",
