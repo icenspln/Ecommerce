@@ -15,10 +15,7 @@ const productSchema = mongoose.Schema({
         type: Number,
         float: true, required: true,
     },
-    size: {
-        type: Number,
-        double: true, required: true,
-    },
+    size: [{ type: Number }],
     picture: { type: String, required: true },
     type: { type: String, required: true },
 

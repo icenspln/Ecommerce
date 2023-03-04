@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import product from "../assets/product2.png";
 import { useCartContext } from "../context/cart_context";
-import axios from "axios";
+import { useProductContext } from "../context/product_context";
+
 
 const Checkout = () => {
-  const { cart, total_price } = useCartContext();
+  const { cart, total_price , clearCart } = useCartContext();
+
+  const { addOrder , addOrderError, addOrderSuccess , addorderLoading } =
+  useProductContext();
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,18 +24,24 @@ const Checkout = () => {
       phone_number: phone,
       email: email,
       items: cart,
+      total: total_price
     };
+    await addOrder(formData); 
+    if (addOrderSuccess){
+      console.log("order success");
+      clearCart();
+    } else {
+      console.log("order failed");
+    }
 
-    console.log(formData);
-
-    axios
-      .post("http://localhost:4000/products/addOrder", formData)
-      .then((res) => {
-        console.log("there is a response");
-      })
-      .catch((err) => {
-        console.log("there is an error");
-      });
+    // axios
+    //   .post("http://localhost:4000/products/addOrder", formData)
+    //   .then((res) => {
+    //     console.log("there is a response");
+    //   })
+    //   .catch((err) => {
+    //     console.log("there is an error");
+    //   });
   };
 
   return (
@@ -103,7 +113,7 @@ const Checkout = () => {
                   </div>
                   <div className="max-w-[150px] flex flex-col gap-4">
                     <h3 className="text-base font-bold">{curElem.title}</h3>
-                    <small className="text-sm font-bold">$50</small>
+                    <small className="text-sm font-bold">${curElem.price}</small>
                   </div>
                 </div>
               </article>

@@ -26,10 +26,10 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
             <div className="text-base">
               <p className="font-bold">{curElem.title}</p>
               <p>
-                Flavor <span className="font-bold">Strawberry</span>
+                Flavor <span className="font-bold">{curElem.flavor}</span>
               </p>
               <p>
-                Size <span className="font-bold">tiny</span>
+                Size <span className="font-bold">{curElem.size}</span>
               </p>
 
               <p>Quantity</p>
