@@ -36,26 +36,32 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
               <div className="flex gap-2 mt-2 items-center ">
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setIncrement(curElem.id, curElem.flavor, curElem.size)}
+                  onClick={() =>
+                    setIncrement(curElem.id, curElem.flavor, curElem.size)
+                  }
                 >
                   +
                 </div>
                 <div className="bg-white text-redish p-2">{curElem.amount}</div>
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setDecrease(curElem.id, curElem.flavor, curElem.size)}
+                  onClick={() =>
+                    setDecrease(curElem.id, curElem.flavor, curElem.size)
+                  }
                 >
                   -
                 </div>
                 <p className="font-bold p-3">
-                  {curElem.amount * curElem.price}$
+                  {+(curElem.amount * curElem.price).toString().slice(0, 6)}$
                 </p>
               </div>
             </div>
             <i>
               <CgClose
                 className="cursor-pointer"
-                onClick={() => removeItem(curElem.id, curElem.flavor, curElem.size)}
+                onClick={() =>
+                  removeItem(curElem.id, curElem.flavor, curElem.size)
+                }
               />
             </i>
           </article>
@@ -64,7 +70,9 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
 
       {/* total */}
       <hr className="my-6" />
-      <p className="text-base font-bold text-center">Total: {total_price}$</p>
+      <p className="text-base font-bold text-center">
+        Total: {total_price.toString().slice(0, 6)}$
+      </p>
       <br />
       <a href="/checkout" className="text-center block ">
         <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">

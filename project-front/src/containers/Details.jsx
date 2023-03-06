@@ -1,14 +1,13 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import productsData from "../data/productsData";
 import { AiOutlineCheck } from "react-icons/ai";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 
 const Details = ({ id }) => {
   const { addToCart } = useCartContext();
-
+  const [popUpToggle, setpopUpToggle] = useState(false);
   const params = useParams().id;
 
   const [product, setProduct] = useState({});
@@ -55,8 +54,21 @@ const Details = ({ id }) => {
   const handleRemoveQuantity = () => {
     if (count > 1) setCount(count - 1);
   };
+
+  const popUp = () => {
+    setpopUpToggle(true);
+  };
+
   return (
     <main>
+      {popUpToggle && (
+        <div
+          className="slide-in-blurred-left absolute top-20 z-10 left-1 block font-bold bg-redish p-4 translate-x-8  text-white"
+          onClick={() => setpopUpToggle(false)}
+        >
+          Item Added To Your Cart!
+        </div>
+      )}
       <div className="flex items-center flex-col md:flex-row">
         <div>
           <img src={product.img} alt="" />
@@ -127,6 +139,7 @@ const Details = ({ id }) => {
               onClick={(e) => {
                 e.preventDefault();
                 addToCart(params, 1, product, flavor, size);
+                popUp();
               }}
             >
               ADD TO CART
