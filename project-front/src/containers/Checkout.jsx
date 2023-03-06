@@ -96,14 +96,24 @@ const Checkout = () => {
               <article className="max-w-sm my-4 ">
                 <div className="flex ">
                   <div className="max-w-[150px] border-l-4 border-gray-400 relative">
-                    <img src={product} alt="" />
+                    <img src={curElem.img} alt="" />
                     <i className="absolute right-6 top-0 bg-redish w-7 h-7 rounded-full flex items-center justify-center not-italic text-white z-10  ">
                       {curElem.amount}
                     </i>
                   </div>
                   <div className="max-w-[150px] flex flex-col gap-4">
                     <h3 className="text-base font-bold">{curElem.title}</h3>
-                    <small className="text-sm font-bold">$50</small>
+                    <p className="text-sm">
+                      Flavor:
+                      <span className="font-bold"> {curElem.flavor}</span>
+                    </p>
+                    <p className="text-sm m-0">
+                      Size:
+                      <span className="font-bold">{curElem.size} serving</span>
+                    </p>
+                    <small className="text-sm font-bold">
+                      {curElem.price}{" "}
+                    </small>
                   </div>
                 </div>
               </article>
