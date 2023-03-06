@@ -11,26 +11,22 @@ const Details = ({ id }) => {
 
   const params = useParams().id;
 
-
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     getProductDetail();
   }, []);
 
-
-
   const [size, setSize] = useState("");
   const [flavor, setFlavor] = useState("");
   useEffect(() => {
-    console.log(size, flavor);
+    // console.log(size, flavor);
   }, [size, flavor]);
 
   async function getProductDetail() {
     for (let i = 0; i < productsData.length; i++) {
       if (params == productsData[i].id) {
         setProduct(productsData[i]);
-
       }
     }
   }
@@ -39,11 +35,16 @@ const Details = ({ id }) => {
     if (product) {
       // console.log(singleProduct.flavors[0]);
       //setFlavor(singleProduct.flavors[0]);
-      if (product && product.flavors && product.size && product.flavors.length > 0 && product.size.length > 0) {
+      if (
+        product &&
+        product.flavors &&
+        product.size &&
+        product.flavors.length > 0 &&
+        product.size.length > 0
+      ) {
         setFlavor(product.flavors[0]);
         setSize(product.size[0]);
       }
-
     }
   }, [product]);
   const [count, setCount] = useState(1);
@@ -78,13 +79,15 @@ const Details = ({ id }) => {
             <label className="mr-6" htmlFor="flavor">
               Flavor
             </label>
-            <select className="px-3 py-1 bg-white text-redish " value={flavor} onChange={(e) => setFlavor(e.target.value)}>
-                {product['flavors']?.map((pro) => (
-                  <option value={pro}>{pro}</option>
-
-                ))}
-
-              </select>
+            <select
+              className="px-3 py-1 bg-white text-redish "
+              value={flavor}
+              onChange={(e) => setFlavor(e.target.value)}
+            >
+              {product["flavors"]?.map((pro) => (
+                <option value={pro}>{pro}</option>
+              ))}
+            </select>
             <br className="mb-6" />
             <label htmlFor="">Quantity</label>
             <div className="flex gap-2 items-center ">
@@ -109,18 +112,23 @@ const Details = ({ id }) => {
             <label className="mr-6" htmlFor="size">
               Size
             </label>
-            <select className=" px-3 py-1 bg-white text-redish " value={size} onChange={(e) => setSize(e.target.value)}>
-
-              {product['size']?.map((pro) => (
+            <select
+              className=" px-3 py-1 bg-white text-redish "
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
+            >
+              {product["size"]?.map((pro) => (
                 <option value={pro}>{pro} servings</option>
-
               ))}
             </select>
 
-            <button className="block md:inline bg-redish text-white px-3 py-2 mx-auto md:mx-6 my-6 " onClick={(e) => {
-              e.preventDefault();
-              addToCart(params, 1, product, flavor, size)
-            }}>
+            <button
+              className="block md:inline bg-redish text-white px-3 py-2 mx-auto md:mx-6 my-6 "
+              onClick={(e) => {
+                e.preventDefault();
+                addToCart(params, 1, product, flavor, size);
+              }}
+            >
               ADD TO CART
             </button>
           </form>

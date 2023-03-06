@@ -33,7 +33,7 @@ const Checkout = () => {
         console.log("there is an error");
       });
   };
-
+  console.log(cart);
   return (
     <>
       <main className="p-4 md:p-12 flex flex-col md:flex-row items-start gap-4">
