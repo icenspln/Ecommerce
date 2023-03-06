@@ -21,8 +21,13 @@ const productsData = [
     overview:
       "Each serving of the world’s best-selling whey protein powder provides 24 grams of high-quality whey protein primarily from Whey Protein Isolate, which has had excess carbohydrates, fat, and lactose ‘isolated’ out using sophisticated filtering technologies. The powder is also instantized for easy mixing using just a glass and spoon. With more than 20 different flavors – including naturally flavored options – there’s no doubt this is the Optimum Nutrition Gold Standard 100% Whey Protein.",
 
-    price: "85.99",
+    price: 85.99,
     link: "#",
+    size: [
+      20,
+      30,
+      70
+    ],
   },
   {
     id: 2,
@@ -39,8 +44,12 @@ const productsData = [
     overview:
       "SERIOUS MASS is the ultimate muscle building and weight gain formula. With 1,250 calories per 2-scoop serving and 50 grams of protein to support muscle recovery, this powder makes the ideal post-workout and between meals shake for sizing up your goals. SERIOUS MASS provides you with the tools you need to support your weight gains goals.¹",
 
-    price: "30.99.",
+    price: 30.99,
     link: "#",
+    size: [
+      30,
+      70
+    ],
   },
   {
     id: 3,
@@ -57,8 +66,13 @@ const productsData = [
     overview:
       "Creatine monohydrate has been extensively studied and shown to help support muscle size, strength and recovery when used consistently over time in conjunction with a healthy, balanced diet and regular weight training¹.",
 
-    price: "39.99",
+    price: 39.99,
     link: "#",
+
+    size: [
+      30,
+      70
+    ],
   },
   {
     id: 4,
@@ -75,8 +89,12 @@ const productsData = [
     overview:
       "OPTI-MEN® is more than a multi. It’s a NUTRIENT OPTIMIZATION SYSTEM OPTI-MEN® providing 75+ active ingredients in 4 blends specifically designed to support the nutrient needs of active men. Each 3-tablet serving provides free form amino acids, antioxidant vitamins A, C and E, essential minerals and botanical extracts in foundational amounts that can be built on by consuming a healthy, balanced diet.¹",
 
-    price: "31.99",
+    price: 31.99,
     link: "#",
+    size: [
+      30,
+      70
+    ],
   },
   {
     id: 5,
@@ -93,8 +111,12 @@ const productsData = [
     overview:
       "BCAA 1000 Caps are recommended first thing in the morning and/or during the 30 minutes just before or immediately after training. Simply take 2 capsules with your favourite beverage, or with your protein shake.",
 
-    price: "2.99",
+    price: 2.99,
     link: "#",
+    size: [
+      30,
+      70
+    ],
   },
   {
     id: 6,
@@ -111,8 +133,12 @@ const productsData = [
     overview:
       "Mix up ESSENTIAL AMIN.O. ENERGY anytime you want a boost of energy, focus and muscle recovery support. Each serving provides 100 mg of caffeine from natural sources to support energy and focus along with 5 grams of amino acids for muscle support.¹",
 
-    price: "27.99",
+    price: 27.99,
     link: "#",
+    size: [
+      30,
+      70
+    ],
   },
   {
     id: 7,
@@ -129,8 +155,12 @@ const productsData = [
     overview:
       "Casein, a slower digesting and absorbing protein can be used after exercise, between meals or before bed to help support satiety and muscle recovery. GOLD STANDARD 100% CASEIN™ delivers BCAAs to recovering muscles for several hours. By using only premium micellar casein as a protein source, we’ve created a protein powder that sets the GOLD STANDARD® for slow digesting protein support.",
 
-    price: "53.99",
+    price: 53.99,
     link: "#",
+    size: [
+      30,
+      70
+    ],
   },
 ];
 export default productsData;

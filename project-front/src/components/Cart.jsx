@@ -4,7 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
 
 const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
-  const { cart, clearCart, total_price } = useCartContext();
+  const { cart, total_price } = useCartContext();
 
   const { removeItem, setIncrement, setDecrease } = useCartContext();
 
@@ -26,24 +26,24 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
             <div className="text-base">
               <p className="font-bold">{curElem.title}</p>
               <p>
-                Flavor <span className="font-bold">Strawberry</span>
+                Flavor <span className="font-bold">{curElem.flavor}</span>
               </p>
               <p>
-                Size <span className="font-bold">tiny</span>
+                Size <span className="font-bold">{curElem.size}</span>
               </p>
 
               <p>Quantity</p>
               <div className="flex gap-2 mt-2 items-center ">
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setIncrement(curElem.id)}
+                  onClick={() => setIncrement(curElem.id, curElem.flavor, curElem.size)}
                 >
                   +
                 </div>
                 <div className="bg-white text-redish p-2">{curElem.amount}</div>
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
-                  onClick={() => setDecrease(curElem.id)}
+                  onClick={() => setDecrease(curElem.id, curElem.flavor, curElem.size)}
                 >
                   -
                 </div>
@@ -55,7 +55,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
             <i>
               <CgClose
                 className="cursor-pointer"
-                onClick={() => removeItem(curElem.id)}
+                onClick={() => removeItem(curElem.id, curElem.flavor, curElem.size)}
               />
             </i>
           </article>
