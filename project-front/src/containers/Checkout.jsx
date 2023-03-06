@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import product from "../assets/product2.png";
 import { useCartContext } from "../context/cart_context";
 import { useProductContext } from "../context/product_context";
-
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  const { cart, total_price , clearCart } = useCartContext();
+  const { cart, total_price, clearCart } = useCartContext();
 
-  const { addOrder , addOrderError, addOrderSuccess , addorderLoading } =
-  useProductContext();
+  const { addOrder, addOrderError, addOrderSuccess, addorderLoading } =
+    useProductContext();
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,10 +24,10 @@ const Checkout = () => {
       phone_number: phone,
       email: email,
       items: cart,
-      total: total_price
+      total: total_price,
     };
-    await addOrder(formData); 
-    if (addOrderSuccess){
+    await addOrder(formData);
+    if (addOrderSuccess) {
       console.log("order success");
       clearCart();
     } else {
@@ -113,7 +113,9 @@ const Checkout = () => {
                   </div>
                   <div className="max-w-[150px] flex flex-col gap-4">
                     <h3 className="text-base font-bold">{curElem.title}</h3>
-                    <small className="text-sm font-bold">${curElem.price}</small>
+                    <small className="text-sm font-bold">
+                      ${curElem.price}
+                    </small>
                   </div>
                 </div>
               </article>
@@ -123,9 +125,9 @@ const Checkout = () => {
             Your totall is{" "}
             <span className="font-bold text-base">${total_price}</span>
           </h2>
-          <a href="/" className="text-base text-gray-500">
+          <Link to="/" className="text-base text-gray-500">
             <u> Continue Shoping?</u>
-          </a>
+          </Link>
         </div>
       </main>
     </>
