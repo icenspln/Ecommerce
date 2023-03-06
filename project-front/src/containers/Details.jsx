@@ -1,5 +1,5 @@
 import { useState } from "react";
-import product2 from "../assets/product2.png";
+import { Link } from "react-router-dom";
 import productsData from "../data/productsData";
 import { AiOutlineCheck } from "react-icons/ai";
 import React, { useEffect } from "react";
@@ -132,9 +132,12 @@ const Details = ({ id }) => {
               ADD TO CART
             </button>
           </form>
-          <a className="text-base text-gray-500" href="/">
+          {/* <a className="text-base text-gray-500" href="/">
             Continue Shopping?
-          </a>
+          </a> */}
+          <Link to="/" className="text-base text-gray-500">
+            <u> Continue Shoping?</u>
+          </Link>
         </div>
       </div>
       <div>

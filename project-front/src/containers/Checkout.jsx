@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import product from "../assets/product2.png";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import axios from "axios";
 
@@ -123,9 +123,12 @@ const Checkout = () => {
             Your totall is{" "}
             <span className="font-bold text-base">${total_price}</span>
           </h2>
-          <a href="/" className="text-base text-gray-500">
+          {/* <a href="/" className="text-base text-gray-500">
+            
+          </a> */}
+          <Link to="/">
             <u> Continue Shoping?</u>
-          </a>
+          </Link>
         </div>
       </main>
     </>
