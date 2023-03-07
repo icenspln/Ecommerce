@@ -59,13 +59,13 @@ const Details = ({ id }) => {
     setpopUpToggle(true);
     setTimeout(() => {
       setpopUpToggle(false);
-    }, 4000);
+    }, 3000);
   };
 
   return (
     <main>
       {popUpToggle && (
-        <div className="slide-out-blurred-left absolute top-[70%] sm:top-20 z-10 left-1 block font-bold bg-redish p-4  text-white">
+        <div className="slide-out-blurred-left absolute top-[100%] sm:top-20 z-10 right-1 sm:left-1 block font-bold bg-redish p-4  text-white">
           Item Added To Your Cart!
         </div>
       )}
