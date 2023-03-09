@@ -7,7 +7,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
   const { cart, total_price } = useCartContext();
 
   const { removeItem, setIncrement, setDecrease } = useCartContext();
-
+  console.log(cart);
   return (
     <div className="bg-redish z-50 w-80 p-5 h-screen fixed right-0 top-0 slide-in-blurred-right text-white overflow-y-auto">
       <CgClose
@@ -21,7 +21,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
         return (
           <article className="flex mb-14">
             <div className="min-w-[100px] ">
-              <img src={product2} alt="product2" />
+              <img src={curElem.img} alt="product2" />
             </div>
             <div className="text-base">
               <p className="font-bold">{curElem.title}</p>
