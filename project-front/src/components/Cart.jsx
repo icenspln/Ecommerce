@@ -9,7 +9,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
   const { removeItem, setIncrement, setDecrease } = useCartContext();
 
   return (
-    <div className="bg-redish z-50 w-80 p-5 h-screen fixed right-0 top-0 slide-in-blurred-right text-white ">
+    <div className="bg-redish z-50 w-80 p-5 h-screen fixed right-0 top-0 slide-in-blurred-right text-white overflow-y-auto">
       <CgClose
         className="absolute text-white text-3xl cursor-pointer"
         onClick={handleCartClick}
@@ -19,8 +19,8 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
 
       {cart.map((curElem) => {
         return (
-          <article className="flex">
-            <div className="basis-2/4">
+          <article className="flex mb-14">
+            <div className="min-w-[100px] ">
               <img src={product2} alt="product2" />
             </div>
             <div className="text-base">
@@ -33,7 +33,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
               </p>
 
               <p>Quantity</p>
-              <div className="flex gap-2 mt-2 items-center ">
+              <div className="flex gap-2 mt-2 items-center max-w-[170px] ">
                 <div
                   className="bg-white text-redish p-2 cursor-pointer"
                   onClick={() =>

@@ -64,8 +64,8 @@ const Details = ({ id }) => {
 
   return (
     <main>
-      <div className="flex items-center flex-col md:flex-row ">
-        <div>
+      <div className="flex items-center flex-col lg:flex-row ">
+        <div className="basis-1/2">
           <img src={product.img} alt="" />
         </div>
         <div>
