@@ -111,7 +111,7 @@ const productsData = [
     overview:
       "BCAA 1000 Caps are recommended first thing in the morning and/or during the 30 minutes just before or immediately after training. Simply take 2 capsules with your favourite beverage, or with your protein shake.",
 
-    price: 2.99,
+    price: 12.99,
     link: "#",
     size: [
       30,
