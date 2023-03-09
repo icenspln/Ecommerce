@@ -64,12 +64,7 @@ const Details = ({ id }) => {
 
   return (
     <main>
-      {popUpToggle && (
-        <div className="slide-out-blurred-left absolute top-[100%] sm:top-20 z-10 right-1 sm:left-1 block font-bold bg-redish p-4  text-white">
-          Item Added To Your Cart!
-        </div>
-      )}
-      <div className="flex items-center flex-col md:flex-row">
+      <div className="flex items-center flex-col md:flex-row ">
         <div>
           <img src={product.img} alt="" />
         </div>
@@ -87,7 +82,7 @@ const Details = ({ id }) => {
             ))}
           </ul>
           <hr className="my-6" />
-          <form className="my-4" action="#" method="get">
+          <form className="my-4 min-h-[300px] " action="#" method="get">
             <label className="mr-6" htmlFor="flavor">
               Flavor
             </label>
@@ -144,6 +139,11 @@ const Details = ({ id }) => {
             >
               ADD TO CART
             </button>
+            {popUpToggle && (
+              <div className="slide-out-blurred-left z-10 mx-auto font-bold bg-redish p-4 text-white">
+                Item Added To Your Cart!
+              </div>
+            )}
           </form>
           {/* <a className="text-base text-gray-500" href="/">
             Continue Shopping?
