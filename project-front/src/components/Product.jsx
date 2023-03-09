@@ -6,7 +6,7 @@ export default function Product({ product_id, img, desc, price }) {
       <div>
         <img src={img} alt="product 1" className="m-auto" />
       </div>
-      <h3 className="font-bold">{desc}</h3>
+      <h3 className="font-bold min-h-[50px]">{desc}</h3>
       <QuickView link={product_id} />
       <p>
         <b>
