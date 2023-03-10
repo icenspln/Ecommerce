@@ -14,7 +14,7 @@ const Details = ({ id }) => {
 
   useEffect(() => {
     getProductDetail();
-  }, []);
+  }, [getProductDetail]);
 
   const [size, setSize] = useState("");
   const [flavor, setFlavor] = useState("");

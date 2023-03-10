@@ -11,11 +11,6 @@ const Sidebar = ({ handleClick }) => {
       />
       <ul className="text-white ">
         <li>
-          <a href="" className="font-bold">
-            Home
-          </a>
-        </li>
-        <li>
           <a href="/" className="font-bold">
             Products
           </a>
@@ -24,12 +19,8 @@ const Sidebar = ({ handleClick }) => {
       <div className="text-white mt-auto ">
         <p className="font-thin  mb-4">Social Media</p>
         <div className="flex gap-4">
-          <a href="">
-            <FaInstagram className="inline text-2xl" />
-          </a>
-          <a href="">
-            <FaYoutube className="inline text-2xl" />
-          </a>
+          <FaInstagram className="inline text-2xl cursor-pointer" />
+          <FaYoutube className="inline text-2xl cursor-pointer" />
         </div>
       </div>
     </div>

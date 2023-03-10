@@ -1,5 +1,4 @@
 import React from "react";
-import product2 from "../assets/product2.png";
 import { CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
 
@@ -21,7 +20,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
         return (
           <article className="flex mb-14">
             <div className="min-w-[100px] ">
-              <img src={curElem.img} alt="product2" />
+              <img src={curElem.img} alt="product" />
             </div>
             <div className="text-base">
               <p className="font-bold">{curElem.title}</p>

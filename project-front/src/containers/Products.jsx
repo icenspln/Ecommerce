@@ -1,8 +1,6 @@
 import productsData from "../data/productsData";
 import Product from "./../components/Product";
 import { CgScrollV } from "react-icons/cg";
-import React, { useEffect, useState } from "react";
-import productOne from "../assets/product1.png";
 
 export default function Products() {
   return (
