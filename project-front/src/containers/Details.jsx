@@ -14,7 +14,8 @@ const Details = ({ id }) => {
 
   useEffect(() => {
     getProductDetail();
-  }, [getProductDetail]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [size, setSize] = useState("");
   const [flavor, setFlavor] = useState("");
@@ -24,6 +25,7 @@ const Details = ({ id }) => {
 
   async function getProductDetail() {
     for (let i = 0; i < productsData.length; i++) {
+      // eslint-disable-next-line
       if (params == productsData[i].id) {
         setProduct(productsData[i]);
       }
