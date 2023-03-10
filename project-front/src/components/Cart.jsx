@@ -1,6 +1,7 @@
 import React from "react";
 import { CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
+import { Link } from "react-router-dom";
 
 const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
   const { cart, total_price } = useCartContext();
@@ -73,11 +74,11 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
         Total: {total_price.toString().slice(0, 6)}$
       </p>
       <br />
-      <a href="/checkout" className="text-center block ">
+      <Link to="/checkout" className="text-center block ">
         <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">
           CHECKOUT
         </button>
-      </a>
+      </Link>
     </div>
   );
 };
