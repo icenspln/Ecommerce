@@ -120,12 +120,9 @@ const Checkout = () => {
             );
           })}
           <h2 className="text-sm mb-12">
-            Your totall is{" "}
+            Your totall is
             <span className="font-bold text-base">${total_price}</span>
           </h2>
-          {/* <a href="/" className="text-base text-gray-500">
-            
-          </a> */}
           <Link to="/">
             <u> Continue Shoping?</u>
           </Link>

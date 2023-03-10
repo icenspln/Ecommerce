@@ -16,7 +16,6 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
       />
       <h1 className="text-3xl leading-7 font-bold text-center mb-8">CART</h1>
       {/* product */}
-
       {cart.map((curElem) => {
         return (
           <article className="flex mb-14">
@@ -74,11 +73,11 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
         Total: {total_price.toString().slice(0, 6)}$
       </p>
       <br />
-      <Link to="/checkout" className="text-center block ">
+      <a href="/checkout" className="text-center block ">
         <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">
           CHECKOUT
         </button>
-      </Link>
+      </a>
     </div>
   );
 };
