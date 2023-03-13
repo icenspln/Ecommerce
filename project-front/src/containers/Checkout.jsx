@@ -22,8 +22,6 @@ const Checkout = () => {
       items: cart,
     };
 
-    console.log(formData);
-
     axios
       .post("http://localhost:4000/products/addOrder", formData)
       .then((res) => {
@@ -33,7 +31,6 @@ const Checkout = () => {
         console.log("there is an error");
       });
   };
-  console.log(cart);
   return (
     <>
       <main className="p-4 md:p-12 flex flex-col md:flex-row items-start gap-4">
@@ -93,7 +90,7 @@ const Checkout = () => {
 
           {cart.map((curElem) => {
             return (
-              <article className="max-w-sm my-4 ">
+              <article key={curElem.id} className="max-w-sm my-4 ">
                 <div className="flex ">
                   <div className="max-w-[150px] border-l-4 border-gray-400 relative">
                     <img src={curElem.img} alt="" />

@@ -9,7 +9,6 @@ const Details = ({ id }) => {
   const { addToCart } = useCartContext();
   const [popUpToggle, setpopUpToggle] = useState(false);
   const params = useParams().id;
-  console.log(typeof +params);
   const [product, setProduct] = useState({});
 
   useEffect(() => {
@@ -18,9 +17,7 @@ const Details = ({ id }) => {
 
   const [size, setSize] = useState("");
   const [flavor, setFlavor] = useState("");
-  useEffect(() => {
-    // console.log(size, flavor);
-  }, [size, flavor]);
+  useEffect(() => {}, [size, flavor]);
 
   async function getProductDetail() {
     for (let i = 0; i < productsData.length; i++) {
@@ -32,8 +29,6 @@ const Details = ({ id }) => {
 
   useEffect(() => {
     if (product) {
-      // console.log(singleProduct.flavors[0]);
-      //setFlavor(singleProduct.flavors[0]);
       if (
         product &&
         product.flavors &&
@@ -61,7 +56,6 @@ const Details = ({ id }) => {
       setpopUpToggle(false);
     }, 3000);
   };
-
   return (
     <main>
       <div className="flex items-center flex-col lg:flex-row ">
@@ -72,8 +66,8 @@ const Details = ({ id }) => {
           <h1 className="text-4xl font-bold my-3">{product["desc"]}</h1>
           <p className="text-base font-bold my-3">from ${product["price"]}</p>
           <ul className="leading-9">
-            {product["benifits"]?.map((pro) => (
-              <li>
+            {product["benifits"]?.map((pro, index) => (
+              <li key={index}>
                 <span>
                   <AiOutlineCheck className="inline mr-3" />
                 </span>
@@ -91,8 +85,10 @@ const Details = ({ id }) => {
               value={flavor}
               onChange={(e) => setFlavor(e.target.value)}
             >
-              {product["flavors"]?.map((pro) => (
-                <option value={pro}>{pro}</option>
+              {product["flavors"]?.map((pro, index) => (
+                <option key={index} value={pro}>
+                  {pro}
+                </option>
               ))}
             </select>
             <br className="mb-6" />
@@ -124,8 +120,10 @@ const Details = ({ id }) => {
               value={size}
               onChange={(e) => setSize(e.target.value)}
             >
-              {product["size"]?.map((pro) => (
-                <option value={pro}>{pro} servings</option>
+              {product["size"]?.map((pro, index) => (
+                <option key={index} value={pro}>
+                  {pro} servings
+                </option>
               ))}
             </select>
 

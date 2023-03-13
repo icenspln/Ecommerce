@@ -1,13 +1,11 @@
-import React from "react";
+import CheckoutButton from "../components/checkoutButton";
 import { CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
-import { Link } from "react-router-dom";
 
 const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
   const { cart, total_price } = useCartContext();
 
   const { removeItem, setIncrement, setDecrease } = useCartContext();
-  console.log(cart);
   return (
     <div className="bg-redish z-50 w-80 p-5 h-screen fixed right-0 top-0 slide-in-blurred-right text-white overflow-y-auto">
       <CgClose
@@ -18,7 +16,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
       {/* product */}
       {cart.map((curElem) => {
         return (
-          <article className="flex mb-14">
+          <article key={curElem.title} className="flex mb-14">
             <div className="min-w-[100px] ">
               <img src={curElem.img} alt="product" />
             </div>
@@ -73,11 +71,7 @@ const Cart = ({ handleClickM, handleClickP, handleCartClick }) => {
         Total: {total_price.toString().slice(0, 6)}$
       </p>
       <br />
-      <a href="/checkout" className="text-center block ">
-        <button className="bg-white text-redish px-3 py-1 transition hover:text-white hover:bg-redish font-bold blink-1">
-          CHECKOUT
-        </button>
-      </a>
+      <CheckoutButton />
     </div>
   );
 };
