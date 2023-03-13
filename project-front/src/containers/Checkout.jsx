@@ -10,26 +10,26 @@ const Checkout = () => {
   const [phone, setPhone] = useState("");
   const [address, setAdress] = useState("");
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   const formData = {
-  //     full_name: fullName,
-  //     address: address,
-  //     phone_number: phone,
-  //     email: email,
-  //     items: cart,
-  //   };
-
-  //   axios
-  //     .post("http://localhost:4000/products/addOrder", formData)
-  //     .then((res) => {
-  //       console.log("there is a response");
-  //     })
-  //     .catch((err) => {
-  //       console.log("there is an error");
-  //     });
-  // };
+    const formData = {
+      full_name: fullName,
+      address: address,
+      phone_number: phone,
+      email: email,
+      items: cart,
+    };
+    console.log(formData);
+    //   axios
+    //     .post("http://localhost:4000/products/addOrder", formData)
+    //     .then((res) => {
+    //       console.log("there is a response");
+    //     })
+    //     .catch((err) => {
+    //       console.log("there is an error");
+    //     });
+  };
   return (
     <>
       <main className="p-4 md:p-12 flex flex-col md:flex-row items-start gap-4">
@@ -40,7 +40,7 @@ const Checkout = () => {
           <h2 className="font-semibold text-lg mb-7">
             Enter your informations so we can deliver your package
           </h2>
-          <form className="flex flex-col gap-3">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <div className="max-w-xs flex flex-col justify-between gap-3 mb-4 ">
               <label>Full Name</label>
               <input
